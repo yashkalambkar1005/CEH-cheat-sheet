@@ -132,7 +132,7 @@ smbmap -H <IP> -u user -p pass -r SHARE
 smbmap -H <IP> -u user -p pass --download "SHARE/path/file.txt"
 ```
 
-Tool to Exploit Sql server Vulenrability 
+**Tool to Exploit Sql server Vulenrability**
 
 python3 /root/impacket/examples/mssqlclient.py SKILL.CEH.com/LoginName:Password@IP -port 1433 
 
@@ -283,7 +283,7 @@ Execute targeted authentication brute-forcing:
 wpscan -url <domain_or_ip> -U user -P pass.txt
 ```
 
-wpscan --url http://www.cehorg.com:8080/CEH/wp-login.php -U username -P rockyou.txt 
+**wpscan --url http://www.cehorg.com:8080/CEH/wp-login.php -U username -P rockyou.txt**
 
 **Certifed Ethical Hacker (CEH) Practical Cheat Sheet** 
 
@@ -326,6 +326,18 @@ Automate exploitation suites:
 ```
 python3 phonesploitpro.py
 ```
+**To find file inside device**
+find / -type d -name (file name) 2>/dev/null
+or
+find /sdcard -name (file name)
+**List ELF files**
+find Scan -type f
+**Check whether they are ELF binaries**
+file *
+**Calculate entropy of each ELF**
+ent filename
+or
+binwalk -E filename
 
 **Note:** Inside phoneSploit interactive interface options, use `N` to access the next configuration index page and `P` to return to previous indexes. 
 
@@ -464,3 +476,27 @@ cat secret.txt
 
 Page 10 
 
+**To Identify the format of the file**
+cat Sniff.txt
+**To inspect the entropy**
+strings (file name)
+**OpenSSL AES-encrypted**
+openssl enc -d -aes-256-cbc -a -in Sniff.txt -pass pass:<HenryPassword>
+**If the file is binary**
+openssl enc -d -aes-256-cbc -in Sniff.txt -pass pass:<HenryPassword>
+
+
+Ends with = and uses A-Z a-z 0-9 + / - Base64
+Only 0-9 a-f - Hex
+Starts with U2FsdGVkX1 - OpenSSL salted encryption
+Starts with -----BEGIN PEM - (certificate/key)
+Starts with Salted__ - OpenSSL encrypted file
+Random printable characters with no pattern Possibly encrypted
+Pk... - ZIP
+7zXZ or 7z - 7z archive
+**ZIP**
+unzip -l Sniff.txt
+**7z encrypted**
+7z x Sniff.txt
+**Only hex-encoded**
+echo "48656c6c6f20576f726c64" | xxd -r -p
