@@ -283,7 +283,7 @@ Execute targeted authentication brute-forcing:
 wpscan -url <domain_or_ip> -U user -P pass.txt
 ```
 
-**wpscan --url http://www.cehorg.com:8080/CEH/wp-login.php -U username -P rockyou.txt**
+wpscan --url http://www.cehorg.com:8080/CEH/wp-login.php -U username -P rockyou.txt
 
 **Certifed Ethical Hacker (CEH) Practical Cheat Sheet** 
 
