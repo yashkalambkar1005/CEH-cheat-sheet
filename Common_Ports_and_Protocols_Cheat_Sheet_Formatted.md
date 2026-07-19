@@ -21,7 +21,7 @@
   Modbus                                  502        ---
   LDAPS                                   636        ---
   POP3S                                   995        ---
-  MSSQL                                  1433        ---
+  MSSQL(sql Server)                      1433        ---
   SNMP                                    ---   161, 162
   MQTT                                   1883        ---
   NFS                                    2049        ---
